@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: white;
+            color: blue;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button.blue {
+            background-color: red;
+            color: white;
+        }
+
+        .button.red {
+            background-color: red;
+            color: white;
+        }
+
+        #nao-button {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Sim ou Não</h2>
+        <div class="button-container">
+            <button class="button blue" id="sim-button">Sim</button>
+            <button class="button red" id="nao-button">Não</button>
+        </div>
+    </div>
+    <script>
+        const naoButton = document.getElementById("nao-button");
+        const simButton = document.getElementById("sim-button");
+
+        simButton.addEventListener("click", ()=>{
+            alert("Seu desejo é uma ordem..");
+        });
+
+        naoButton.addEventListener("mouseenter", () => {
+            const maxX = window.innerWidth - naoButton.clientWidth;
+            const maxY = window.innerHeight - naoButton.clientHeight;
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            naoButton.style.position = "absolute";
+            naoButton.style.left = `${randomX}px`;
+            naoButton.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+
+</html>
